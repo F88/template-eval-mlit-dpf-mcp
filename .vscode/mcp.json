@@ -1,0 +1,24 @@
+{
+  "servers": {
+    "mlit-dpf-mcp": {
+      "command": "path/to/mlit-dpf-mcp/.venv/bin/python",
+      "args": ["path/to/mlit-dpf-mcp/src/server.py"],
+      "env": {
+        // "MLIT_API_KEY": "your_api_key_here",
+        "MLIT_API_KEY": "${input:MLIT_API_KEY}",
+        "MLIT_BASE_URL": "https://data-platform.mlit.go.jp/api/v1/",
+        "PYTHONUNBUFFERED": "1",
+        // "LOG_LEVEL": "WARNING"
+        "LOG_LEVEL": "DEBUG"
+      }
+    }
+  },
+  "inputs": [
+    {
+      "id": "MLIT_API_KEY",
+      "type": "promptString",
+      "description": "MLIT_API_KEY",
+      "password": true
+    }
+  ]
+}
