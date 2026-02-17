@@ -46,14 +46,14 @@ VSCode をMPCクライアントとして利用する場合は、`.vscode/mcp.jso
 
 #### `.vscode/mcp.json`
 
-`command` と `args` は実行環境に合わせて変更すること:
+`command` と `args` の値は、ローカル環境にセットアップしたMCPサーバーに合わせて変更して下さい。
 
 ```jsonc
 {
   "servers": {
     "mlit-dpf-mcp": {
-      "command": "<mlit-dpf-mcp の .venv/bin/python へのパス>",
-      "args": ["<mlit-dpf-mcp の src/server.py へのパス>"],
+      "command": "path/to/mlit-dpf-mcp/.venv/bin/python",
+      "args": ["path/to/mlit-dpf-mcp/src/server.py"],
       ...
     }
   }
